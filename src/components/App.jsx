@@ -8,9 +8,13 @@ function App() {
         <h1>Ghibli Cards</h1>
         <div className="score">
           <span className="high-score">Highscore: 0</span>
-          <span className="score">Score: 0</span>
+          <span className="score">Current Score: 0</span>
         </div>
       </header>
+      <p className="instructions">
+        Click each card once to earn points!
+        Don&apos;t click the same card twice, and keep an eye on your score!
+      </p>
       <footer>
         <p className="repo">
           View the source code on{' '}
