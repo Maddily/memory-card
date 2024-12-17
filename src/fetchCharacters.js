@@ -39,7 +39,7 @@ export default async function fetchCharacters(ids) {
     const data = await response.json();
     return data.data.Page.characters.map((character) => ({
       id: character.id,
-      name: character.name.native || character.name.full,
+      name: character.name.full,
       imageUrl: character.image.large,
     }));
   } catch (error) {
