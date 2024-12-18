@@ -1,5 +1,5 @@
 /**
- * Fetch anime characters from AniList API
+ * Fetch anime characters from AniList API.
  *
  * @param {number[]} ids - Character ids
  * @returns {Object[]} - Characters, where each character has an id, name and imageUrl
@@ -49,7 +49,7 @@ export async function fetchCharacters(ids) {
 }
 
 /**
- * Shuffle an array;
+ * Shuffle an array.
  *
  * @param {Object[]} array - An array of objects
  */
@@ -81,4 +81,26 @@ export function resetCards(characters) {
     character.clicked = false;
     return character;
   });
+}
+
+/**
+ * End the game by resetting the current score, updating the result
+ * and setting `clicked` property on all characters to false.
+ *
+ * @param {function(number)} setCurrentScore - currentScore state setter
+ * @param {function(Object)} setResult - result state setter
+ * @param {function(Object[])} setCharacters - characters state setter
+ * @param {Object[]} characters - Character objects
+ * @param {Object} result - Ex: { won: true, lost: false }
+ */
+export function endGame(
+  setCurrentScore,
+  setResult,
+  setCharacters,
+  characters,
+  result
+) {
+  setCurrentScore(0);
+  setResult(result);
+  setCharacters(resetCards(characters));
 }
