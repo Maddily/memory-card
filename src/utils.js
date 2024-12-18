@@ -46,3 +46,25 @@ export async function fetchCharacters(ids) {
     console.error('Error fetching characters:', error);
   }
 }
+
+/**
+ * Shuffle an array;
+ *
+ * @param {Object[]} array - An array of objects
+ */
+export function shuffle(array) {
+  const shuffledArray = [...array];
+  let currentIndex = shuffledArray.length;
+
+  while (currentIndex !== 0) {
+    const randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [shuffledArray[currentIndex], shuffledArray[randomIndex]] = [
+      shuffledArray[randomIndex],
+      shuffledArray[currentIndex],
+    ];
+  }
+
+  return shuffledArray;
+}
