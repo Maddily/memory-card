@@ -48,6 +48,7 @@ a {
 
 .score {
   align-items: flex-end;
+  font-size: 0.8rem;
 }
 
 .instructions {
@@ -119,6 +120,10 @@ p, header h1 {
 @media (min-width: 1000px) {
   header h1 {
     font-size: 2rem;
+  }
+
+  .score {
+    font-size: 1rem;
   }
 
   .instructions {
