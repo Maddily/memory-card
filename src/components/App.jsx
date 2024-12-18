@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import shuffle from '../utils';
+import { shuffle, fetchCharacters } from '../utils';
 import '../styles/App.css';
 import '../styles/normalize.css';
 
