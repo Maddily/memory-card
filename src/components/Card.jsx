@@ -11,7 +11,7 @@ import '../styles/Card.css';
  */
 export default function Card({ id, name, imageUrl, onClick }) {
   return (
-    <div onClick={onClick} className="card" data-id={id} tabIndex="0">
+    <div onKeyDown={onClick} onClick={onClick} className="card" data-id={id} tabIndex="0">
       <img src={imageUrl} alt={'Image of' + name} />
       <p className="character-name">{name}</p>
     </div>

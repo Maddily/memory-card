@@ -25,6 +25,16 @@ function App() {
   }, []);
 
   function cardClickHandler(e) {
+    // Only accept keydown for Enter key
+    if (e.type === 'keydown' && e.key !== 'Enter') {
+      return;
+    }
+
+    // Unfocus previously selected card
+    if (e.key === 'Enter') {
+      e.target.blur();
+    }
+
     const characterId = e.target.closest('.card').dataset.id;
     const clickedCharacter = characters.find(
       (character) => character.id === +characterId
