@@ -41,6 +41,7 @@ export async function fetchCharacters(ids) {
       id: character.id,
       name: character.name.full.split(' ')[0],
       imageUrl: character.image.large,
+      clicked: false,
     }));
   } catch (error) {
     console.error('Error fetching characters:', error);
