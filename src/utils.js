@@ -84,7 +84,7 @@ export function resetCards(characters) {
 }
 
 /**
- * End the game by resetting the current score, updating the result
+ * Reset the game by resetting the current score, updating the result
  * and setting `clicked` property on all characters to false.
  *
  * @param {function(number)} setCurrentScore - currentScore state setter
@@ -93,7 +93,7 @@ export function resetCards(characters) {
  * @param {Object[]} characters - Character objects
  * @param {Object} result - Ex: { won: true, lost: false }
  */
-export function endGame(
+export function resetGame(
   setCurrentScore,
   setResult,
   setCharacters,
