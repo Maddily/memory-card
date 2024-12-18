@@ -22,6 +22,53 @@ function App() {
     fetchData();
   }, []);
 
+  function cardClickHandler(e) {
+    const characterId = e.target.closest('.card').dataset.id;
+    const clickedCharacter = characters.find(
+      (character) => character.id === +characterId
+    );
+
+    if (clickedCharacter.clicked) {
+      // End the game. The player has lost.
+      if (currentScore > highScore) {
+        setHighScore(currentScore);
+      }
+
+      setResult({
+        won: false,
+        lost: true,
+      });
+    } else {
+      // Mark the card as clicked
+      clickedCharacter.clicked = true;
+
+      const updatedCharacters = characters.map((character) =>
+        character.id === +characterId ? clickedCharacter : character
+      );
+
+      const allClicked = updatedCharacters.every(
+        (character) => character.clicked
+      );
+
+      if (allClicked) {
+        // End the game. The player has won.
+        if (currentScore + 1 > highScore) {
+          setHighScore(currentScore + 1);
+          setCurrentScore(currentScore + 1);
+        }
+
+        setResult({
+          won: true,
+          lost: false,
+        });
+      } else {
+        // The player has clicked a valid card. Continue the game.
+        setCharacters(shuffle(updatedCharacters));
+        setCurrentScore(currentScore + 1);
+      }
+    }
+  }
+
   return (
     <>
       <header>
