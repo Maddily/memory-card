@@ -68,3 +68,16 @@ export function shuffle(array) {
 
   return shuffledArray;
 }
+
+/**
+ * Reset characters by setting each character's clicked property to false.
+ *
+ * @param {Object[]} characters - Character objects
+ * @returns A new array of characters with each character's clicked property set to false
+ */
+export function resetCards(characters) {
+  return characters.map((character) => {
+    character.clicked = false;
+    return character;
+  });
+}
