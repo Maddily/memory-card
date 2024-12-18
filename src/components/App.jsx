@@ -2,6 +2,11 @@ import { useState } from 'react';
 import '../styles/App.css';
 import '../styles/normalize.css';
 
+const characterIds = [
+  507, 508, 509, 6752, 75454, 75456, 32918, 385, 384, 42535, 10055, 533, 6866,
+  3133, 8523, 8524,
+];
+
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
