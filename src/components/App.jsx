@@ -116,7 +116,7 @@ function App() {
             Click each card once to earn points! Don&apos;t click the same card
             twice, and keep an eye on your score!
           </p>
-          <Cards onClick={cardClickHandler} characters={characters} />
+          <Cards key={currentScore} onClick={cardClickHandler} characters={characters} />
         </>
       )}
       <footer>
