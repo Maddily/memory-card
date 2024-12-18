@@ -1,0 +1,51 @@
+.card {
+  font-size: 0.9rem;
+  font-weight: bold;
+  background: rgba(255, 140, 0, 0.25);
+  padding: 10px 10px 5px;
+  cursor: pointer;
+  transition: background-color 300ms;
+  perspective: 1000px;
+  animation: flipIn 500ms ease-in-out;
+}
+
+.card, .card * {
+  border-radius: 5px;
+}
+
+.card:hover {
+  background: rgba(255, 140, 0, 0.4);
+}
+
+.card img {
+  width: 100px;
+  border: 2px solid #d17300;
+}
+
+.character-name {
+  background: #9f5800;
+  padding: 0 5px;
+}
+
+@media (min-width: 1000px) {
+  .card {
+    padding: 20px 20px 10px;
+    font-size: 1.1rem;
+  }
+
+  .card img {
+    width: 130px;
+  }
+}
+
+@keyframes flipIn {
+  0% {
+    transform: rotateY(100deg) translateY(-100px) skew(-0.06turn, 50deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) translateY(0) skew(0deg);
+    opacity: 1;
+  }
+}
+
