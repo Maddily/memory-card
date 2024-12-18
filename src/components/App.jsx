@@ -12,6 +12,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [result, setResult] = useState({ won: false, lost: false });
 
   useEffect(() => {
     async function fetchData() {
