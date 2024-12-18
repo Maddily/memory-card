@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import shuffle from '../utils';
 import '../styles/App.css';
 import '../styles/normalize.css';
 
@@ -8,8 +9,17 @@ const characterIds = [
 ];
 
 function App() {
+  const [characters, setCharacters] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+
+  useEffect(() => {
+    async function fetchData() {
+      const charactersList = await fetchCharacters(characterIds);
+      setCharacters(shuffle(charactersList));
+    }
+    fetchData();
+  }, []);
 
   return (
     <>
