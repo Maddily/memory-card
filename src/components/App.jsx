@@ -122,7 +122,7 @@ function App() {
       <footer>
         <p className="repo">
           View the source code on{' '}
-          <a href="https://github.com/Maddily/memory-card" target="_blank">
+          <a href="https://github.com/Maddily/memory-card-game" target="_blank">
             Github
           </a>
         </p>
