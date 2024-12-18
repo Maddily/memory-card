@@ -54,7 +54,7 @@ a {
 .instructions {
   margin: 2rem auto auto;
   max-width: 500px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   padding: 0 1rem;
 }
 
@@ -128,5 +128,6 @@ p, header h1 {
 
   .instructions {
     max-width: 800px;
+    font-size: 0.8rem;
   }
 }
