@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { shuffle, fetchCharacters } from '../utils';
+import { shuffle, fetchCharacters, resetGame } from '../utils';
+import Cards from './Cards';
+import GameResult from './GameResult';
 import '../styles/App.css';
 import '../styles/normalize.css';
 
@@ -78,10 +80,35 @@ function App() {
           <span className="score">Current Score: {currentScore}</span>
         </div>
       </header>
-      <p className="instructions">
-        Click each card once to earn points! Don&apos;t click the same card
-        twice, and keep an eye on your score!
-      </p>
+      {result.won ? (
+        <GameResult
+          onClick={() =>
+            resetGame(setCurrentScore, setResult, setCharacters, characters, {
+              won: false,
+              lost: false,
+            })
+          }
+          result="Great job, you won!"
+        />
+      ) : result.lost ? (
+        <GameResult
+          onClick={() =>
+            resetGame(setCurrentScore, setResult, setCharacters, characters, {
+              won: false,
+              lost: false,
+            })
+          }
+          result="Better luck next time!"
+        />
+      ) : (
+        <>
+          <p className="instructions">
+            Click each card once to earn points! Don&apos;t click the same card
+            twice, and keep an eye on your score!
+          </p>
+          <Cards onClick={cardClickHandler} characters={characters} />
+        </>
+      )}
       <footer>
         <p className="repo">
           View the source code on{' '}
