@@ -36,6 +36,11 @@ header, footer {
 header h1 {
   font-size: 1.6rem;
   text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.score {
+  align-self: flex-end;
 }
 
 header h1,
